@@ -56,4 +56,4 @@ print 'td here' in page
 page = page.replace('td here',tabledata)
 page = page.replace('//py vars here',js)
 print page
-##return page
+return page
