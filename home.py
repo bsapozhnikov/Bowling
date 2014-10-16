@@ -16,12 +16,12 @@ tabledata=''
 js = ''
 for player in people:
     L = player.strip('\n').split('|')
-    print 'L: '+`L`
+    ##print 'L: '+`L`
     name = L[0]
-    print name
+    ##print name
     ball_totals = [0 for x in xrange(21)]
     balls = L[1].split(' ')
-    print balls
+    ##print balls
     i = 0
     while i<20:
         if i>1:
@@ -41,19 +41,19 @@ for player in people:
         ball_totals[i+1]=int(balls[i+1])+ball_totals[i]
         i+=2
     ball_totals[20]=ball_totals[19]+int(balls[20])
-    print ball_totals
+    ##print ball_totals
     frame_totals = [ball_totals[i*2+1] for i in xrange(10)]
     frame_totals[-1]+=int(balls[20])
-    print frame_totals
+    ##print frame_totals
     tabledata+='<tr><td>'+name+'''<input type="button" value="button" onclick="toggle(\''''+name+'''\')"></input></td>'''
     tabledata+='<td></td><td></td><td></td><td></td><td></td></tr>'
     js+='var '+name+'scores = '+`balls`+';\n'
     js+='var '+name+'totals = '+`frame_totals`+';\n'
 
-print tabledata
-print js    
-print 'td here' in page
+##print tabledata
+##print js    
+##print 'td here' in page
 page = page.replace('td here',tabledata)
 page = page.replace('//py vars here',js)
 print page
-return page
+##return page
