@@ -2,16 +2,32 @@
   <head>
     <title> Stuyvesant Boys Bowling! </title>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script>
+      //py vars here
+      function toggle(name) {
+      var scorediv = document.getElementById('scores');
+      str = '<div id="scorename">'+name+'</div>';
+      str+= '<div id="scoreballs">'+eval(name+'scores')+'</div>';
+      str+= '<div id="scoretotals">'+eval(name+'totals')+'</div>';
+      scorediv.innerHTML = str;
+      if (scorediv.style.display === 'block' || scorediv.style.display === '')
+        scorediv.style.display = 'none';
+      else
+        scorediv.style.display = 'block';
+      }
+    </script>
   </head>
   <body>
     <div id="wrapper">
       <table id="roster">
-	<th>Name</th>
-	<th>Team</th>
-	<th>Total Matches</th>
-	<th>Total Games</th>
-	<th>Total Pins</th>
-	<th>Average</th>
+	<tr>
+	  <th>Name</th>
+	  <th>Team</th>
+	  <th>Total Matches</th>
+	  <th>Total Games</th>
+	  <th>Total Pins</th>
+	  <th>Average</th>
+	</tr>
 	<tr>
 	  <td>David Yao</td>
 	  <td>A</td>
@@ -30,6 +46,7 @@
 	</tr>
 	td here
       </table>
+      <div id="scores">stuff</div>
     </div>
   </body>
 </html>
