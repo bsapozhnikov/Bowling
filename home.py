@@ -22,6 +22,7 @@ for player in people:
     ball_totals = [0 for x in xrange(21)]
     games = []
     player_totals = []
+    total_pins = 0
     for game in L[1:]:
         balls = game.split(' ')
         ##print balls
@@ -50,9 +51,12 @@ for player in people:
         ##print frame_totals
         games.append(balls)
         player_totals.append(frame_totals)
+        total_pins+=frame_totals[-1]
 
     tabledata+='<tr><td>'+name+'''<input type="button" value="button" onclick="toggle(\''''+name+'''\')"></input></td>'''
-    tabledata+='<td></td><td></td><td></td><td></td><td></td></tr>'
+    tabledata+='<td>'+`len(games)`+'</td>'
+    tabledata+='<td>'+`total_pins`+'</td>'
+    tabledata+='<td>'+`1.0*len(games)/total_pins`+'</td></tr>'
     js+='var '+name+'scores = '+`games`+';\n'
     js+='var '+name+'totals = '+`player_totals`+';\n'
 
