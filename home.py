@@ -37,10 +37,12 @@ people = f.readlines()
 f.close()    
 tabledata=''
 js = ''
+names = []
 for player in people:
     L = player.strip('\n').split('|')
     ##print 'L: '+`L`
     name = L[0]
+    names.append(name)
     ##print name
     ball_totals = [0 for x in xrange(21)]
     games = []
@@ -86,7 +88,8 @@ for player in people:
 ##print tabledata
 ##print js    
 ##print 'td here' in page
-page = page.replace('td here',tabledata)
+js+='var names = '+`names`+';\n'
+page = page.replace('<!--td here-->',tabledata)
 page = page.replace('//py vars here',js)
 print page
 ##return page
