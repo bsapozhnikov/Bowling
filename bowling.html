@@ -7,8 +7,11 @@
       function toggle(name) {
       var scorediv = document.getElementById('scores');
       str = '<div id="scorename">'+name+'</div>';
-      str+= '<div id="scoreballs">'+eval(name+'scores')+'</div>';
-      str+= '<div id="scoretotals">'+eval(name+'totals')+'</div>';
+      for (i=0; i<eval(name+'scores').length; i++){
+	str+= '<div class="scoreballs">'+eval(name+'scores')[i]+'</div>';
+        str+= '<div class="scoretotals">'+eval(name+'totals')[i]+'</div>';	
+      }
+      
       scorediv.innerHTML = str;
       if (scorediv.style.display === 'block' || scorediv.style.display === '')
         scorediv.style.display = 'none';
