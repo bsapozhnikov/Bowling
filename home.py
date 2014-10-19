@@ -56,7 +56,7 @@ for player in people:
     tabledata+='<tr><td>'+name+'''<input type="button" value="button" onclick="toggle(\''''+name+'''\')"></input></td>'''
     tabledata+='<td>'+`len(games)`+'</td>'
     tabledata+='<td>'+`total_pins`+'</td>'
-    tabledata+='<td>'+`1.0*len(games)/total_pins`+'</td></tr>'
+    tabledata+='<td>'+`1.0*total_pins/len(games)`+'</td></tr>'
     js+='var '+name+'scores = '+`games`+';\n'
     js+='var '+name+'totals = '+`player_totals`+';\n'
 
