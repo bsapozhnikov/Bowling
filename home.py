@@ -18,12 +18,12 @@ if 'player' in form:
     player_names = [person.split('|')[0] for person in people]
     player_games = [person.split('|')[1:] for person in people]
     new_names = form.getlist('player')
-    for i in len(new_names):
+    for i in range(len(new_names)):
         new_name = new_names[i]
         new_scores = ' '.join([form.getlist('ball'+j)[i] for j in xrange(0,21)])
         player_games[player_names.find(new_name)]+='|'+new_scores
     g = open('./scores.txt','w')
-    for i in len(player_names):
+    for i in range(len(player_names)):
         g.write(player_names[i]+'|'+player_games[i]+'\n')
     g.close()
         
