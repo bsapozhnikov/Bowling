@@ -16,7 +16,7 @@ f.close()
 ##new game
 if 'player' in form:
     player_names = [person.split('|')[0] for person in people]
-    player_games = [person.split('|'))[1:] for person in people]
+    player_games = [person.split('|')[1:] for person in people]
     new_names = form.getlist('player')
     for i in len(new_names):
         new_name = new_names[i]
