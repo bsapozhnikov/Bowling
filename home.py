@@ -5,11 +5,11 @@ form = cgi.FieldStorage()
 
 page='Content-Type: text/html\n\n'
 
-f = open('bowling.html','r')
+f = open('./bowling.html','r')
 page+=f.read()
 f.close
 
-f = open('scores.txt','r')
+f = open('./scores.txt','r')
 people = f.readlines()
 f.close()
 tabledata=''
