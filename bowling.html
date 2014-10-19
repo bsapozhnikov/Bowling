@@ -18,6 +18,14 @@
       else
         scorediv.style.display = 'block';
       }
+
+      function newform() {
+        str = 'Name: <input type="text" name="player"/><br>'
+        for (i=0; i<21; i++){
+          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" />'
+        }
+        document.getElementById('insertinputhere').innerHTML+=str+'<br>';
+      }
     </script>
   </head>
   <body>
@@ -44,6 +52,13 @@
 	td here
       </table>
       <div id="scores">stuff</div>
+      <div id="newgames">
+	<form method="post" id="gameform" action="home.py">
+	  <div id="insertinputhere"></div>
+	  <input type="submit" value="Submit" />
+	</form>
+      </div>
+      <input type="button" value="New Game" onclick="newform()"></input>
     </div>
   </body>
 </html>
