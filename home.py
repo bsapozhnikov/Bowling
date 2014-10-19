@@ -16,7 +16,7 @@ f.close()
 ##new game
 if 'player' in form:
     player_names = [person.split('|')[0] for person in people]
-    player_games = [person.split('|')[1:] for person in people]
+    player_games = [person.replace('\n','').split('|')[1:] for person in people]
     new_names = form.getlist('player')
     for i in range(len(new_names)):
         new_name = new_names[i]
@@ -24,7 +24,7 @@ if 'player' in form:
         player_games[player_names.index(new_name)].append(new_scores)
     g = open('./scores.txt','w')
     for i in range(len(player_names)):
-        g.write(player_names[i]+'|'+'|'.join(player_games[i]+'\n'))
+        g.write(player_names[i]+'|'+'|'.join(player_games[i])+'\n')
     g.close()
         
 ##print html
