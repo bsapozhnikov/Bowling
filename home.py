@@ -21,10 +21,10 @@ if 'player' in form:
     for i in range(len(new_names)):
         new_name = new_names[i]
         new_scores = ' '.join([form.getlist('ball'+`j`)[i] for j in xrange(0,21)])
-        player_games[player_names.index(new_name)]+='|'+new_scores
+        player_games[player_names.index(new_name)].append(new_scores)
     g = open('./scores.txt','w')
     for i in range(len(player_names)):
-        g.write(player_names[i]+'|'+player_games[i]+'\n')
+        g.write(player_names[i]+'|'+'|'.join(player_games[i]+'\n'))
     g.close()
         
 ##print html
