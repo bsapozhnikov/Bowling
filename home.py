@@ -20,7 +20,7 @@ if 'player' in form:
     new_names = form.getlist('player')
     for i in range(len(new_names)):
         new_name = new_names[i]
-        new_scores = ' '.join([form.getlist('ball'+j)[i] for j in xrange(0,21)])
+        new_scores = ' '.join([form.getlist('ball'+`j`)[i] for j in xrange(0,21)])
         player_games[player_names.find(new_name)]+='|'+new_scores
     g = open('./scores.txt','w')
     for i in range(len(player_names)):
