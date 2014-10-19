@@ -28,6 +28,13 @@ if 'player' in form:
     g.close()
         
 ##print html
+f = open('./bowling.html','r')
+page+=f.read()
+f.close
+
+f = open('./scores.txt','r')
+people = f.readlines()
+f.close()    
 tabledata=''
 js = ''
 for player in people:
