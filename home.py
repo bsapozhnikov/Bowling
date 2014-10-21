@@ -78,10 +78,10 @@ for player in people:
         player_totals.append(frame_totals)
         total_pins+=frame_totals[-1]
 
-    tabledata+='<tr><td><a value="button" onclick="toggle(\''''+name+'''\')">'''+name+'''</a></td>'''
+    tabledata+='<tr><a value="button" onclick="toggle(\''''+name+'''\')"><td>'''+name+'''</td>'''
     tabledata+='<td>'+`len(games)`+'</td>'
     tabledata+='<td>'+`total_pins`+'</td>'
-    tabledata+='<td>'+`1.0*total_pins/len(games)`+'</td></tr>'
+    tabledata+='<td>'+`1.0*total_pins/len(games)`+'</td></a></tr>'
     js+='var '+name+'scores = '+`games`+';\n'
     js+='var '+name+'totals = '+`player_totals`+';\n'
 
