@@ -9,7 +9,7 @@
         str = '<div id="scorename">'+name+'</div>';
         for (i=0; i<eval(name+'scores').length; i++){
 	  str+= '<table><tr class="index">';
-	  for (j=0; j<10; j++){
+	  for (j=1; j<11; j++){
   	    if (j==10)
 	      str+= '<td colspan="3">'+j+'</td>';
 	    str+= '<td colspan="2">'+j+'</td>';
@@ -20,7 +20,7 @@
 	  }
           str+= '</tr><tr class="scoretotals">';
 	  for (j=0; j<eval(name+'totals')[i].length; j++){						
-            if (j==10)
+            if (j==9)
  	      str+= '<td colspan="3">'+eval(name+'totals')[i][j]+'</td>';
 	    str+= '<td colspan="2">'+eval(name+'totals')[i][j]+'</td>';
 	  }					     
