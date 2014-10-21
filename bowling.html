@@ -12,17 +12,31 @@
 	  for (j=1; j<11; j++){
   	    if (j==10)
 	      str+= '<td colspan="3">'+j+'</td>';
-	    str+= '<td colspan="2">'+j+'</td>';
+   	    else
+	      str+= '<td colspan="2">'+j+'</td>';
 	  }
 	  str+= '</tr><tr class="scoreballs">';
     	  for (j=0; j<eval(name+'scores')[i].length; j++){						
-	    str+= '<td>'+eval(name+'scores')[i][j]+'</td>';
+            if (j%2==0 && j<18 && eval(name+'scores')[i][j]==10){
+              str+= '<td colspan="2">X</td>';
+	      j++;
+	    }
+	    if ((j%2==1 || j==20) && eval(name+'scores')[i][j-1]+eval(name+'scores')[i][j]==10){
+	      str+= '<td>/</td>';
+	    }
+	    if (j>17 && eval(name+'scores')[i][j]==10){
+	      str+= '<td>X</td>';
+	    }
+	    else{
+	      str+= '<td>'+eval(name+'scores')[i][j]+'</td>';
+	    }
 	  }
           str+= '</tr><tr class="scoretotals">';
 	  for (j=0; j<eval(name+'totals')[i].length; j++){						
             if (j==9)
  	      str+= '<td colspan="3">'+eval(name+'totals')[i][j]+'</td>';
-	    str+= '<td colspan="2">'+eval(name+'totals')[i][j]+'</td>';
+            else
+	      str+= '<td colspan="2">'+eval(name+'totals')[i][j]+'</td>';
 	  }					     
           str+= '</tr>';	
         }      
