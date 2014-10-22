@@ -28,6 +28,7 @@ if 'player' in form:
     g.close()
         
 ##print html
+page='Content-Type: text/html\n\n'    
 f = open('./bowling.html','r')
 page+=f.read()
 f.close

@@ -21,7 +21,7 @@
               str+= '<td colspan="2">X</td>';
 	      j++;
 	    }
-	    else if (j%2==1 && j<18 && eval(name+'scores')[i][j-1]+eval(name+'scores')[i][j]==10){
+	    else if (j%2==1 && j<20 && int(eval(name+'scores')[i][j-1])+int(eval(name+'scores')[i][j])==10){
 	      str+= '<td>/</td>';
 	    }
 	    else if (j>17 && eval(name+'scores')[i][j]==10){
