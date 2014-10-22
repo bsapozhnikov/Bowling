@@ -60,6 +60,9 @@
 	  else{
 	    c = ' ';
 	  }		  
+   	  if (a==0){a='-';}
+	  if (b==0){b='-';}
+	  if (c==0 && (a=='X' || b=='X' || b=='/')){b='-';}
 	  str+= '<td>'+a+'</td><td>'+b+'</td><td>'+c+'</td>'
 	
        
@@ -86,7 +89,7 @@
 	}
 	str+='</select><br>'				      
         for (i=0; i<21; i++){
-          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onchange="updateValue('+i+')"/>'
+          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onkeyup="updateValue('+i+')"/>'
         }
         document.getElementById('insertinputhere').innerHTML+=str+'<br>';
       }
