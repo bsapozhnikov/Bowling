@@ -16,21 +16,53 @@
 	      str+= '<td colspan="2">'+j+'</td>';
 	  }
 	  str+= '</tr><tr class="scoreballs">';
-    	  for (j=0; j<eval(name+'scores')[i].length; j++){						
-            if (j%2==0 && j<18 && eval(name+'scores')[i][j]==10){
+	  for (j=0; j<eval(name+'scores')[i].length; j++){
+            if(j>17){
+	      		  }
+            else if (j%2==0 && j<18 && eval(name+'scores')[i][j]==10){
               str+= '<td colspan="2">X</td>';
 	      j++;
 	    }
-	    else if (j%2==1 && j<20 && parseInt(eval(name+'scores')[i][j-1])+parseInt(eval(name+'scores')[i][j])==10){
+	    else if (j%2==1 && j<18 && parseInt(eval(name+'scores')[i][j-1])+parseInt(eval(name+'scores')[i][j])==10){
 	      str+= '<td>/</td>';
 	    }
 	    else if (j>17 && eval(name+'scores')[i][j]==10){
 	      str+= '<td>X</td>';
+            }
+            else if(eval(name+'scores')[i][j]==0){
+  	      str+= '<td>-</td>';
 	    }
-	    else{
+	    else if(j<18){
 	      str+= '<td>'+eval(name+'scores')[i][j]+'</td>';
 	    }
+          }
+ 	  a = eval(name+'scores')[i][18];
+	  b = eval(name+'scores')[i][19];
+	  c = eval(name+'scores')[i][20];
+	  if(a==10){
+            a = 'X';
+	    if(b==10){
+	      b = 'X';
+	      if(c==10){
+	        c = 'X';
+	      }
+	    }
+	    else if (parseInt(b)+parseInt(c)==10){
+		  c = '/';
+	    }
 	  }
+          else if (parseInt(a)+parseInt(b)==10){
+		b = '/';
+         	if (c==10){
+		  c = 'X';
+		}
+	  }
+	  else{
+	    c = ' ';
+	  }		  
+	  str+= '<td>'+a+'</td><td>'+b+'</td><td>'+c+'</td>'
+	
+       
           str+= '</tr><tr class="scoretotals">';
 	  for (j=0; j<eval(name+'totals')[i].length; j++){						
             if (j==9)
