@@ -79,7 +79,7 @@ for player in people:
         player_totals.append(frame_totals)
         total_pins+=frame_totals[-1]
 
-    tabledata+='<tr><td><div value="button" onclick="toggle(\''''+name+'''\')">'''+name.replace('SPACE," "')+'''</div></td>'''
+    tabledata+='<tr><td><div value="button" onclick="toggle(\''''+name+'''\')">'''+name.replace('SPACE',' ')+'''</div></td>'''
     tabledata+='<td><div value="button" onclick="toggle(\''+name+'\')">'+`len(games)`+'</div></td>'
     tabledata+='<td><div value="button" onclick="toggle(\''+name+'\')">'+`total_pins`+'</div></td>'
     tabledata+='<td><div value="button" onclick="toggle(\''+name+'\')">'+`1.0*total_pins/len(games)`+'</div></td></tr>'
