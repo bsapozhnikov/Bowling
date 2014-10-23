@@ -107,7 +107,7 @@
          
 	  document.getElementsByName("ball"+i)[formnum].value = 10 - parseInt(document.getElementsByName("ball"+(i-1))[formnum].value);
         }
-	if (v==' '){
+	if (v=='-' || v==' ' || v==''){
 	  document.getElementsByName("ball"+i)[formnum].value = 0;
 	}		 
       }
