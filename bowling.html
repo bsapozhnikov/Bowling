@@ -6,7 +6,7 @@
       //py vars here
       function toggle(name) {
         var scorediv = document.getElementById('scores');
-        str = '<div id="scorename">'+name+'</div>';
+        str = '<div id="scorename">'+name.replace("SPACE"," ")+'</div>';
         for (i=0; i<eval(name+'scores').length; i++){
 	  str+= '<table><tr class="index">';
 	  for (j=1; j<11; j++){
@@ -85,7 +85,7 @@
       function newform() {
         str = 'Name: <select name="player">'
         for (i=0; i<names.length; i++){
-    	  str+='<option value="'+names[i]+'">'+names[i]+'</option>'
+    	  str+='<option value="'+names[i]+'">'+names[i].replace("SPACE"," ")+'</option>'
 	}
 	str+='</select><br>'				      
         for (i=0; i<21; i++){
