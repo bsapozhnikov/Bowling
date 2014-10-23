@@ -97,12 +97,12 @@
       function updateValue(i,formnum){
 	v = document.getElementsByName("ball"+i)[formnum].value;
 	if (i<20){document.getElementsByName("ball"+(i+1))[formnum].focus();}
-	if (i<20 && i%2==0){
+	if ((i<20 && i%2==0)||(i>17))){
          
 	  if (v=='10' || v=='X' || v=='x'){
        	    document.getElementsByName("ball"+i)[formnum].value = 10;
 	    document.getElementsByName("ball"+(i+1))[formnum].value = 0;
-	    if (i<19){document.getElementsByName("ball"+(i+2))[formnum].focus();}
+	    if (i<18){document.getElementsByName("ball"+(i+2))[formnum].focus();}
 	    else {document.getElementsByName("ball"+(i+1))[formnum].focus();}
 	  }
 	}
