@@ -95,8 +95,8 @@
 	numforms++;
       }
       function updateValue(i,formnum){
-	if (i<20){v = document.getElementsByName("ball"+i)[formnum].value;}
-	document.getElementsByName("ball"+(i+1))[formnum].focus();
+	v = document.getElementsByName("ball"+i)[formnum].value;
+	if (i<20){document.getElementsByName("ball"+(i+1))[formnum].focus();}
 	if (i<20 && i%2==0){
          
 	  if (v=='10' || v=='X' || v=='x'){
