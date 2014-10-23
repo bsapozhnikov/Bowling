@@ -89,7 +89,7 @@
 	}
 	str+='</select><br>'				      
         for (i=0; i<21; i++){
-          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onkeydown="updateValue('+i+','+numforms+')"/>'
+          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onkeyup="updateValue('+i+','+numforms+')"/>'
         }
         document.getElementById('insertinputhere').innerHTML+=str+'<br>';
 	numforms++;
