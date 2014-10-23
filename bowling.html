@@ -81,7 +81,7 @@
         //else
         //  scorediv.style.display = 'block';
       }
-
+      var numforms = 0
       function newform() {
         str = 'Name: <select name="player">'
         for (i=0; i<names.length; i++){
@@ -89,23 +89,27 @@
 	}
 	str+='</select><br>'				      
         for (i=0; i<21; i++){
-          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onkeydown="updateValue('+i+')"/>'
+          str+='<input type="text" name="ball'+i+'" maxlength="2" size="2" onkeydown="updateValue('+i+','+numforms+')"/>'
         }
         document.getElementById('insertinputhere').innerHTML+=str+'<br>';
+	numforms++;
       }
-      function updateValue(i){
-        v = document.getElementsByName("ball"+i)[0].value;
+      function updateValue(i,formnum){
+        v = document.getElementsByName("ball"+i)[formnum].value;
 	if (i<20 && i%2==0){
          
 	  if (v=='10' || v=='X' || v=='x'){
-       	    document.getElementsByName("ball"+i)[0].value = 10;
-	    document.getElementsByName("ball"+(i+1))[0].value = 0;
+       	    document.getElementsByName("ball"+i)[formnum].value = 10;
+	    document.getElementsByName("ball"+(i+1))[formnum].value = 0;
 	  }
 	}
 	if (v=='/'){
          
-	  document.getElementsByName("ball"+i)[0].value = 10 - parseInt(document.getElementsByName("ball"+(i-1))[0].value);
-        }	
+	  document.getElementsByName("ball"+i)[formnum].value = 10 - parseInt(document.getElementsByName("ball"+(i-1))[formnum].value);
+        }
+	if (v==' '){
+	  document.getElementsByName("ball"+i)[formnum].value = 0;
+	}		 
       }
     </script>
   </head>
